@@ -233,7 +233,6 @@ private extension GPVideoPlayer {
                            else{
                                self?.player?.replaceCurrentItem(with: playerItem)
                            }
-                          
                            if playerItem == self?.playerItems?.last {
                               self?.pauseVideo()
                            }
