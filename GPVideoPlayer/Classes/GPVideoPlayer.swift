@@ -227,7 +227,13 @@ private extension GPVideoPlayer {
                 //playerItem.seek(to: .zero, completionHandler: )
                 playerItem.seek(to: .zero, completionHandler: { complete in
                            print(complete)
-                           //self?.player?.insert(playerItem, after: nil)
+                           if([self?.player? canInsertItem:playerItem afterItem:nil]){
+                                self?.player?.insert(playerItem, after: nil)
+                           }
+                           else{
+                               self?.player?.replaceCurrentItem(with: playerItem)
+                           }
+                          
                            if playerItem == self?.playerItems?.last {
                               self?.pauseVideo()
                            }
