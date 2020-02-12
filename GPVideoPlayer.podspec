@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GPVideoPlayer'
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   s.summary          = "A video player with custom playback controls"
   s.description      = <<-DESC
 A video player with custom playback controls
