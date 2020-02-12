@@ -170,12 +170,15 @@ private extension GPVideoPlayer {
         urls.forEach { (url) in
             let asset = AVAsset(url: url)
             let playerItem = AVPlayerItem(asset: asset)
+            
             playerItems.append(playerItem)
         }
         
         guard !playerItems.isEmpty else {
             return nil
         }
+        
+        
         
         let player = AVQueuePlayer(items: playerItems)
         self.playerItems = playerItems
@@ -224,7 +227,7 @@ private extension GPVideoPlayer {
                 //playerItem.seek(to: .zero, completionHandler: )
                 playerItem.seek(to: .zero, completionHandler: { complete in
                            print(complete)
-                           self?.player?.insert(playerItem, after: nil)
+                           //self?.player?.insert(playerItem, after: nil)
                            if playerItem == self?.playerItems?.last {
                               self?.pauseVideo()
                            }
